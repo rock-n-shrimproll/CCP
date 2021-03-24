@@ -17,8 +17,7 @@
       <a href="theatres.php">Адреса театров</a>
     </div>
     <div class="main">
-      <h1>Здравствуйте, <?php echo "$manager_name"; ?></h1>
-      <h6>Должность</h6>
+      <h1>Здравствуйте, <?php echo "$_SESSION['manager']['surname']"; ?></h1>
 
       <div class="card">
         <p>Id покупки1</p>

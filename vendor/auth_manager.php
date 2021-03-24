@@ -24,8 +24,6 @@
 
     $_SESSION['message'] = 'Успешная регистрация';
     header('Location: ../manager.php');
-
-    //setcookie('client', $user['login'], time() + 480,"user.php");
   }
 
  ?>
