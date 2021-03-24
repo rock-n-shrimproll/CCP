@@ -1,3 +1,7 @@
+<?php
+  session_start();
+ ?>
+
 <!DOCTYPE html>
 <html lang="ru, en" dir="ltr">
   <head>
@@ -18,8 +22,12 @@
     </div>
     <div class="main">
 
-      <h1>Здравствуйте, <?php echo "$user_name"; ?></h1>
-      <img src="img/tick.png" alt="trusted_user" width="3%">
+      <h1>Здравствуйте, <?php echo($_SESSION['client']['surname']); ?></h1>
+      <?php if ($_SESSION['client']['status'] === 1){
+        // TODO: вот эта хуета
+        <img src="img/tick.png" alt="trusted_user" width="3%">
+      } ?>
+      <!-- <img src="img/tick.png" alt="trusted_user" width="3%"> -->
       <div class="sale">
         <label for="">Сумма покупок</label> <br>
         <label>Размер скидки</label> <br>

@@ -10,7 +10,6 @@
     <div class="sidenav">
       <div class="logo">
         <a href="index.php">
-          <!-- надо что-то менять с ссылкой -->
           <img src="img/logo.jpg" class="logo" width=100%>
         </a>
       </div>
@@ -36,12 +35,9 @@
               <li>tag3</li>
             </ul>
           </div>
-          <a href="#movie_$i">
+          <a href="buy.php">
             <p>
-              <button type="button" name="buy_ticket">Купить билет</button>
-              <!-- <script type="text/javascript">
-              если не авторизован - onClick форма авторизации
-              </script> -->
+              <button type="button" name="buy_ticket">Выбрать место</button>
             </p>
           </a>
         </div>

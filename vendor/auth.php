@@ -8,23 +8,27 @@
   $check_user = $connect -> query("SELECT * FROM `client` WHERE `login`='$login' AND `password`='$password'");
 
   $client = $check_user -> fetch_assoc();
-  print_r($client);
+  // print_r($client);
 
   if (count($client) === 0) {
+
     $_SESSION['message'] = 'Неверные логин и пароль';
     header('Location: ../auth_form.php');
   }
 
   else {
-    $_SESSION['client'] = array(
-      "id" => $_SESSION['client_id'],
-      "surname" => $_SESSION['surname'],
-      "name" => $_SESSION['name'],
-      "status" => $_SESSION['status'],
-      "discount" => $_SESSION['discount'],
-      "credit" => $_SESSION['credit'],
+    // $client = $check_user -> fetch_assoc();
+
+    $_SESSION['client'] = array (
+      "id" => $client['client_id'],
+      "surname" => $client['surname'],
+      "name" => $client['name'],
+      "status" => $client['status'],
+      "discount" => $client['discount'],
+      "credit" => $client['credit'],
     );
 
+    print_r($_SESSION['client']);
     $_SESSION['message'] = 'Успешная регистрация';
     header('Location: ../user.php');
 
