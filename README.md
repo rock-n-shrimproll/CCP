@@ -94,3 +94,4 @@ server {
 ```bash
 sudo service nginx restart
 ```
+теперь по адресу `http://localhost` сайт доступен
