@@ -1,25 +1,42 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0px;
 }
 
 .sidenav {
-  height: 100%;
-  width: 180px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #9EDCF1;
-  overflow-x: hidden;
-  padding-top: 20px;
+    height: 100%;
+    width: 180px;
+    background-color: #9edcf1;
+    position: fixed;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: inline-block;
+}
+
+.container {
+    height: 100%;
+}
+
+.has-sidenav .container {
+    margin-left: 180px;
+}
+
+.header {
+    padding: 5px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 
 .sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #9EDCF1;
-  display: block;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: transparent;
+    display: block;
 }
 
 /* .sidenav a:hover {
@@ -27,54 +44,65 @@
 } */
 
 .main {
-  display: flex;
-  flex-direction: row;
-  margin-left: 180px; /* Same as the width of the sidenav */
-  margin-right: 70px;
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 70px;
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+.header {
+    padding: 5px;
+    background-color: rgb(192, 226, 226);
+}
+.header-title h1 {
+    margin: 0px;
+}
+
+.header-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
 }
 
 .reg a {
-  background-color: #9EDCF1;
-  color: white;
-  padding: 14px 20px;
-  font-size: 15px;
-  margin: 0 px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  float: right;
+    background-color: #9edcf1;
+    padding: 14px 20px;
+    font-size: 15px;
+    margin: 0 px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    float: right;
 }
 
 button:hover {
-  opacity:1;
-  background-color: #fafafa;
+    opacity: 1;
+    background-color: #fafafa;
 }
 
-.auth a{
-  background-color: #9EDCF1;
-  color: white;
-  padding: 14px 20px;
-  font-size: 15px;
-  margin: 8px;
-  border: 1px;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  float: right;
+.auth a {
+    background-color: #9edcf1;
+    color: white;
+    padding: 14px 20px;
+    font-size: 15px;
+    margin: 8px;
+    border: 1px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    float: right;
 }
 
 .auth_button button:hover {
-  opacity:1;
-  background-color: #fzfzfz;
+    opacity: 1;
+    background-color: #e4d4d4;
 }
 
 .sale {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .dropdown-content {
@@ -82,7 +110,7 @@ button:hover {
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -93,9 +121,13 @@ button:hover {
     display: block;
 }
 
-.dropdown a:hover {background-color: #ddd;}
+.dropdown a:hover {
+    background-color: #ddd;
+}
 
-.show {display: block;}
+.show {
+    display: block;
+}
 
 /* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
