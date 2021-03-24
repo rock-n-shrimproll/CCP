@@ -20,16 +20,24 @@
       <a href="events.php">События</a>
       <a href="theatres.php">Адреса театров</a>
     </div>
+    <div class="container">
+      <a href="vendor/exit.php">
+        <div class="button">
+            <button style="width:auto;">Выход из аккаунта</button>
+        </div>
+      </a>
+    </div>
+
     <div class="main">
 
       <h1>Здравствуйте, <?php echo($_SESSION['client']['surname']); ?></h1>
-      <?php if ($_SESSION['client']['status'] === 1){
-        // TODO: вот эта хуета
-        <img src="img/tick.png" alt="trusted_user" width="3%">
-      } ?>
+      <!-- <?php
+      //if ($_SESSION['client']['status'] === 1){
+        // echo '<img src="img/tick.png" alt="trusted_user" width="3%">;'
+      } ?> -->
       <!-- <img src="img/tick.png" alt="trusted_user" width="3%"> -->
       <div class="sale">
-        <label for="">Сумма покупок</label> <br>
+        <label>Сумма покупок</label> <br>
         <label>Размер скидки</label> <br>
         <label>Сумма кредита</label>
       </div>
@@ -69,5 +77,8 @@
         </div>
 
     </div>
+
+
+
   </body>
 </html>

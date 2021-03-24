@@ -20,7 +20,12 @@
     <a href="events.php">Мероприятия</a>
     <a href="theatres.php">Адреса кинотеатров</a>
   </div>
-  <form class="container" action="vendor/reg.php" method="post">
+
+
+  action="vendor/reg.php" method="post"
+
+
+  <form class="container">
     <h1>Регистрация</h1>
 
     <label for="surname"><b>Фамилия</b></label>
@@ -51,16 +56,13 @@
       <button type="submit" class="signupbtn">Зарегистрироваться</button>
     </div>
 
-    <p class="msg">
-      <?php
-        echo($_SESSION['message']);
-        unset($_SESSION['message']);
-      ?>
-    </p>
+    <p class="msg">Lorem ipsum</p>
 
     <div class="container">
       Уже есть регистрация? <a href="auth_form.php">Войти</a>
     </div>
   </form>
+
+  <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@
           Ещё не аккаунта? <a href="reg_form.php">Зарегистрируйтесь</a>
         </p>
       </form>
-
+<!--
 
       <h3>Вход для менеджеров</h3>
 
@@ -61,12 +61,12 @@
 
         <p class="msg">
           <?php
-            echo($_SESSION['message']);
-            unset($_SESSION['message']);
+            // echo($_SESSION['message']);
+            // unset($_SESSION['message']);
           ?>
         </p>
 
-      </form>
+      </form> -->
     </div>
 
 </div>

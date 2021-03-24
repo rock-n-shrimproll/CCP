@@ -7,6 +7,7 @@
 </head>
 <body>
   <div class="container">
+
     <a href="reg_form.php">
       <div class="button">
           <button style="width:auto;">Регистрация</button>
