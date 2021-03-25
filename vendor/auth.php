@@ -55,12 +55,12 @@
 
     print_r($_SESSION['purchase']);
 
-    //header('Location: ../user.php');
+    header('Location: ../user.php');
 
-    $lifetime = 5;
-    $name = 'client'.$client['client_id'];
-    $id = $client['client_id'];
-    setcookie($name, $id, time() + $lifetime, '/');
+    // $lifetime = 5;
+    // $name = 'client'.$client['client_id'];
+    // $id = $client['client_id'];
+    // setcookie($name, $id, time() + $lifetime, '/');
 
   }
 

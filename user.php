@@ -26,6 +26,7 @@
          <label style="margin-left: 10px">Сумма покупок</label>
          <?php echo "summa";
          // TODO: нужен purchase
+         // $find_sum = $connect -> query("");
          ?>
          <br>
          <label style="margin-left: 10px">Размер скидки</label>
