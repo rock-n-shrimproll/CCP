@@ -239,3 +239,24 @@ input{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.seat-select{
+  padding: 20px;
+}
+
+.seat-select input[type=checkbox] {
+  display: none;
+}
+.seat-select input[type=checkbox] + span {
+  padding: 20px 15px;
+  background-image: url(img/free.jpg);
+}
+
+.seat-select input[type=checkbox]:disabled + span {
+  background-image: url(img/locked.jpg);
+}
+
+.seat-select input[type=checkbox]:checked + span {
+  background-image: url(img/selected.jpg);
+}
+

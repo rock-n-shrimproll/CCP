@@ -1,6 +1,7 @@
 <?php
   session_start();
   $_SESSION['page'] = 'cart';
+  echo(json_encode(array_keys($_POST))) // вывод выбранных мест, в $_POST будет типа {"1":"on", "2": "on"} - {"id места": "on"}
  ?>
 
 <!DOCTYPE html>
