@@ -15,10 +15,12 @@ require 'connect.php';
  $password_confirm = $_POST['psw_confirm'];
 
  if ($password === $password_confirm) {
-   //$password = md5($password); //хеш пароля
+   // $password = md5($password); //хеш пароля
    //уникальный логин
    mysqli_query($connect,
-   "INSERT INTO `client` (`client_id`, `surname`, `name`, `email`, `birthday`, `regday`, `login`, `password`, `status`, `credit`, `discount`) VALUES (NULL, '$surname', '$name', '$email', '$birthday', CURRENT_TIMESTAMP, '$login', '$password', '0', '0', '0')");
+   "INSERT INTO `client` (`client_id`, `surname`, `name`, `email`, `birthday`, `regday`, `login`,
+      `password`, `status`, `credit`, `discount`) VALUES (NULL, '$surname', '$name', '$email',
+        '$birthday', CURRENT_TIMESTAMP, '$login', '$password', '0', '0', '0')");
   $_SESSION['message'] = 'Успешная регистрация';
   header('Location: ../auth_form.php');
  }

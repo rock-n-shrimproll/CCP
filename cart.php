@@ -1,26 +1,25 @@
 <?php
   session_start();
-  $_SESSION['page'] = 'events';
+  $_SESSION['page'] = 'cart';
  ?>
 
-
-
 <!DOCTYPE html>
-<html lang="ru, en">
+<html lang="en,ru" dir="ltr">
   <head>
-    <meta charset=utf-8>
-    <link rel='stylesheet' href='css/index.css'>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/card.css">
-    <title>События</title>
+    <title>Корзина</title>
   </head>
   <body>
-    <?php require 'blocks/sidenav.php'; ?>
     <?php require 'blocks/header.php'; ?>
+    <?php require 'blocks/sidenav.php'; ?>
 
-    <div class="auth_main">
-      <?php // TODO: выбор ?>
-      <div class="user_main">
-        <?php for ($i=0; $i < 5; $i++):?>
+    <div class="event_main">
+      <h2>Выбранные билеты</h2>
+      <button type="submit" name="send_for_validation">Отправить на бронирование</button>
+    </div>
+      <div class="index_main">
         <div class="card">
           <div class="card-header">
             <h6>Header</h6>
@@ -34,16 +33,12 @@
               <li>3</li>
             </ul>
           </div>
-          <a href="buy.php">
-            <button type="submit" class="card-button">Выбрать место</button>
+          <a href="#">
+            <button type="button" class="card-button">Убрать</button>
           </a>
         </div>
-      <?php endfor; ?>
-
 
       </div>
-
-    </div>
 
   </body>
 </html>

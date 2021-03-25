@@ -13,6 +13,6 @@
 
  // echo 'Connected successfully.';
 
- // $connect->close();
+ //$connect->close();
 
  ?>

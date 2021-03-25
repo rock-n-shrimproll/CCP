@@ -6,6 +6,14 @@ body {
   box-sizing: border-box;
 }
 
+
+.reg_main {
+  margin-left: 180px;
+  padding: 16px;
+  width: 65%;
+  height: 100%;
+}
+
 input[type=text], input[type=password] {
   width: 100%;
   padding: 10px;
@@ -29,6 +37,7 @@ button {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-size: 15px;
 }
 
 button:hover {
@@ -36,34 +45,28 @@ button:hover {
   background-color: #45a049;
 }
 
-.signupbtn {
+.signupbtn button{
   float: left;
   width: 100%;
 }
 
-.container {
-  padding: 16px;
-  width: 55%;
-  height: 55%;
-  margin: auto;
-}
 
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 15px;
 }
 
-.clearfix::after {
+/* .clearfix {
   content: "";
   clear: both;
   display: inline-block;
-}
+} */
 
 .msg p {
   border: 2 px solid;
 }
 
-/* @media screen and (max-width: 300px) {
+@media screen and (max-width: 300px) {
   .signupbtn {
      width: 100%;
-  } */
+  }

@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $_SESSION['page'] = 'theatres';
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="ru, en">
   <head>
@@ -7,19 +13,11 @@
     <title>Театры</title>
   </head>
   <body>
-    <div class="sidenav">
-      <div class="logo">
-        <a href="index.php">
-          <!-- надо что-то менять с ссылкой -->
-          <img src="img/logo.jpg" class="logo" width=100%>
-        </a>
-      </div>
-      <a href="events.php">Мероприятия</a>
-      <a href="theatres.php">Адреса театров</a>
-    </div>
-    
-    <div class="main">
+    <?php require "blocks/sidenav.php" ?>
+
+    <div class="index_main">
       <h3>Адреса театров</h3>
+      <img src="img/images.jpeg" alt="">
     </div>
   </body>
 </html>

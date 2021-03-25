@@ -7,47 +7,38 @@
 <head>
   <meta charset=utf-8>
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/auth_form.css">
+  <!-- <link rel="stylesheet" href="css/auth_form.css"> -->
   <title>Авторизация</title>
 </head>
 <body>
+  <?php require "blocks/sidenav.php" ?>
 
-<div class="container">
-
-    <div class="sidenav">
-      <div class="logo">
-        <a href="index.php">
-          <img src="img/logo.jpg" class="logo" width=100%>
-        </a>
-      </div>
-      <a href="events.php">Мероприятия</a>
-      <a href="theatres.php">Адреса театров</a>
-    </div>
-
-    <div class="main">
-      <h1>Войти в аккаунт</h1>
+  <?php // TODO: развести папки стили ?>
+  <div class="auth_main">
+      <h3>Войти в аккаунт</h3>
       <form class="container" action="vendor/auth.php" method="post">
-        <label for="login"><b>Login</b></label>
+        <label for="login" style="margin-left: 10px"><b>Login</b></label>
         <input type="text" placeholder="Введите login" name="login" required>
 
-        <label for="psw"><b>Password</b></label>
+        <label for="psw" style="margin-left: 10px"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Войти как пользователь</button>
+        <?php // TODO: нормальный стиль для кнопки! ?>
+        <button type="submit" style="auth_button">Войти как пользователь</button>
 
-        <p class="msg">
+        <!-- <p class="msg">
           <?php
-            echo($_SESSION['message']);
-            unset($_SESSION['message']);
+            // echo($_SESSION['message']);
+            // unset($_SESSION['message']);
           ?>
-        </p>
+        </p> -->
 
         <p>
           Ещё не аккаунта? <a href="reg_form.php">Зарегистрируйтесь</a>
         </p>
       </form>
-<!--
 
+      <hr>
       <h3>Вход для менеджеров</h3>
 
       <form class="container" action="vendor/auth_manager.php" method="post">
@@ -59,14 +50,16 @@
 
         <button type="submit">Войти как менеджер</button>
 
-        <p class="msg">
+        <?php // TODO: alert вместе msg ?>
+
+        <!-- <p class="msg">
           <?php
             // echo($_SESSION['message']);
             // unset($_SESSION['message']);
           ?>
-        </p>
+        </p> -->
 
-      </form> -->
+      </form>
     </div>
 
 </div>

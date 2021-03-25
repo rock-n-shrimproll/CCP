@@ -5,27 +5,18 @@
 <!DOCTYPE html>
 <html lang="ru, en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" charset=utf-8>
+  <meta charset=utf-8>
   <link rel='stylesheet' href='css/reg_form.css'>
   <link rel="stylesheet" href="css/index.css">
   <title>Регистрация</title>
 </head>
 <body>
-  <div class="sidenav">
-    <div class="logo">
-      <a href="index.php">
-        <img src="img/logo.jpg" class="logo" width=100%>
-      </a>
-    </div>
-    <a href="events.php">Мероприятия</a>
-    <a href="theatres.php">Адреса кинотеатров</a>
-  </div>
+  <?php require "blocks/sidenav.php" ?>
 
 
-  action="vendor/reg.php" method="post"
+  <!-- action="vendor/reg.php" method="post" -->
 
-
-  <form class="container">
+  <form class="reg_main">
     <h1>Регистрация</h1>
 
     <label for="surname"><b>Фамилия</b></label>
@@ -52,17 +43,21 @@
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw_confirm" required>
 
-    <div class="clearfix">
+    <button type="submit" class="signupbtn">Зарегистрироваться</button>
+
+    <!-- <div class="clearfix">
       <button type="submit" class="signupbtn">Зарегистрироваться</button>
-    </div>
+    </div> -->
 
-    <p class="msg">Lorem ipsum</p>
-
+    <!-- <p class="msg">Lorem ipsum</p> -->
+    <br>
     <div class="container">
       Уже есть регистрация? <a href="auth_form.php">Войти</a>
     </div>
   </form>
 
-  <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8">
+  // TODO: alert("Такой логин уже занят!")
+  </script>
 </body>
 </html>
