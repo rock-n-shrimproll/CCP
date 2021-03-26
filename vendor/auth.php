@@ -55,12 +55,17 @@
 
     print_r($_SESSION['purchase']);
 
-    header('Location: ../user.php');
+    //header('Location: ../user.php');
 
     $lifetime = 10;
     $name = 'client';
-    $id = $client['client_id'];
+    $id =  $_SESSION['client']['id'];
     setcookie($name, $id, time() + $lifetime, '/');
-    echo '<script>const offset = -60 * (new Date()).getTimezoneOffset(); document.cookie = "client='.$id.'; path=/; expires=" + (new Date(Date.now() + '. strval($lifetime) .' + offset)).toUTCString()</script>';
+    echo '<script>
+    const offset = -60 * (new Date()).getTimezoneOffset();
+    document.cookie = "client='.$id.'; path=/; expires=" + (new Date(Date.now() + '. strval($lifetime) .' + offset)).toUTCString()
+    </script>';
+
+    echo ($_COOKIE['client']);
   }
 ?>

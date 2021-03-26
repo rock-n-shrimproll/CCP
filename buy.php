@@ -9,6 +9,7 @@ $_SESSION['page'] = 'buy';
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/seats.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>Выбор билета</title>
 </head>
@@ -19,23 +20,20 @@ $_SESSION['page'] = 'buy';
 
   <div class="auth_main">
     <div class="container">
-      <label for="">tre</label>
+      <label style="margin-left: 10px; font-size: 25px">Дата и время проведения: </label>
+      <!-- <?php
+        // echo ($_SESSION['choosen_event']);
+       ?> -->
+       <br>
+       <label style="margin-left: 10px; font-size: 25px">Название: </label>
+       <br>
+       <label style="margin-left: 10px; font-size: 25px">Место проведения: </label>
+
     </div>
     <div class="buy-main">
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-          Выбрать место
-          <span class="caret"></span>
-        </button>
-        <ul style="dropdown-menu">
-
-          <?php for ($i = 0; $i < 5; $i++) : ?>
-            <li class="dropdown-input"><label><input type="checkbox"> Checkbox</label></li>
-
-          <?php endfor; ?>
-        </ul>
-        <form action="/cart.php" method="post">
-          <?php for ($i = 0; $i < 10; $i++) {
+      <h3><b>Выбор места</b></h3>
+        <form action="/cart.php" style="seat" method="post">
+          <?php for ($i = 1; $i <= 25; $i++) {
             $mod = $i % 2;
             $disabled = 'disabled="true"';
             if ($mod == 1) {
@@ -43,15 +41,14 @@ $_SESSION['page'] = 'buy';
             }
             echo '<label class="seat-select" for="seat-' .$i. '"><input ' . $disabled . '" id="seat-' .$i. '" name="' . strval($i) . '" type="checkbox" ></input><span>' . strval($i) . '</span></label>';
           } ?>
-          <button type="submit" class="signupbtn">В корзину</button>
+          <a href="cart.php">
+            <button type="button" class="signupbtn">В корзину</button>
+          </a>
         </form>
-      </div>
 
     </div>
-    <img src="img/schema.jpg" alt="">
-    <a href="cart.php">
-      <button type="button" class="signupbtn">В корзину</button>
-    </a>
+
+
 
   </div>
 </body>

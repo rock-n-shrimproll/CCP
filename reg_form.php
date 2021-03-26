@@ -14,9 +14,9 @@
   <?php require "blocks/sidenav.php" ?>
 
 
-  <!-- action="vendor/reg.php" method="post" -->
+  <!--  -->
 
-  <form class="reg_main">
+  <form class="reg_main" action="vendor/reg.php" method="post">
     <h1>Регистрация</h1>
 
     <label for="surname"><b>Фамилия</b></label>
@@ -43,7 +43,7 @@
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw_confirm" required>
 
-    <button type="submit" class="signupbtn">Зарегистрироваться</button>
+    <button type="submit" class="signupbtn" onclick="reg_func">Зарегистрироваться</button>
 
     <!-- <div class="clearfix">
       <button type="submit" class="signupbtn">Зарегистрироваться</button>
@@ -56,7 +56,13 @@
     </div>
   </form>
 
-  <script src="js/main.js" charset="utf-8">
+  <script charset="utf-8">
+  function reg_func() {
+    alert("<?php echo($_SESSION['message']);?>");
+    <?php 
+    unset($_SESSION['message']);
+    ?>
+  }
   // TODO: alert("Такой логин уже занят!")
   </script>
 </body>

@@ -1,0 +1,26 @@
+.seat form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.seat-select{
+  padding: 25px;
+  width: 18%;
+}
+
+.seat-select input[type=checkbox] {
+  display: none;
+}
+.seat-select input[type=checkbox] + span {
+  padding: 20px 15px;
+  background-image: url(../img/free.jpg);
+}
+
+.seat-select input[type=checkbox]:disabled + span {
+  background-image: url(../img/locked.jpg);
+}
+
+.seat-select input[type=checkbox]:checked + span {
+  background-image: url(../img/selected.jpg);
+}

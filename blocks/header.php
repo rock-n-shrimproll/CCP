@@ -23,6 +23,9 @@
     <?php if ($_SESSION['page'] === 'cart'): ?>
       <h1>Корзина</h1>
     <?php endif; ?>
+    <?php if ($_SESSION['page'] === 'buy'): ?>
+      <h1>Выбор места</h1>
+    <?php endif; ?>
 
   </div>
   <div class="header-actions">
