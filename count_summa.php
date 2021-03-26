@@ -5,8 +5,8 @@
 
   echo "$client";
 
-  $que = "SELECT SUM(`purchase.sum`) FROM `purchase`
-  WHERE `purchase.client_id`= '$client'";
+  $que = "SELECT SUM(purchase.sum) FROM `purchase`
+  WHERE purchase.client_id= '$client'";
 
   $purchase_sum = $connect -> query($que);
   $purchase_summa =  mysqli_fetch_assoc($purchase_sum);

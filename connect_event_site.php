@@ -1,6 +1,8 @@
 <?php
   session_start();
   require 'vendor/connect.php';
+  require_once 'get_event.php';
+  echo "string";
 
   for ($i=1; $i<= $_SESSION['event_count']; $i++) {
     $event_i = $_SESSION['event'.$i]['id'];
@@ -15,7 +17,7 @@
 
         $event_site_j = $event_site -> fetch_assoc();
 
-        //print_r($event_site_j);
+        print_r($event_site_j);
 
         if (isset($event_site_j)){
           $connect_event_site = array(
@@ -25,7 +27,7 @@
 
           print_r(var_dump($connect_event_site['site_id']));
           //
-          // print_r($connect_event_site[event_id].'-'.$connect_event_site['site_id']);
+          print_r($connect_event_site[event_id].'-'.$connect_event_site['site_id']);
 
           //array_push($_SESSION['event'.$i], $connect_event_site['site_id']);
         }

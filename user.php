@@ -1,7 +1,8 @@
 <?php
   session_start();
   $_SESSION['page'] = 'client';
-  require 'vendor/connect.php';
+  //require 'vendor/connect.php';
+  require 'get_last_pur.php';
  ?>
 
  <!DOCTYPE html>
@@ -17,7 +18,7 @@
      <?php require "blocks/header.php" ?>
 
      <div class="auth_main">
-      <h3>Здравствуйте, <?php echo($_SESSION['client']['surname']); ?>
+      <h3>Здравствуйте, <?php echo($_SESSION['client']['id']); ?>
          <?php if ($_SESSION['client']['status'] === "1"): ?>
           <img src="img/tick.png" alt="tick" style="width: 3%">
         <?php endif ?>
@@ -26,9 +27,9 @@
        <div class="container">
          <!-- <label style="margin-left: 10px">Сумма покупок</label>
          <?php
-            // echo ($_SESSION['summa']). ' руб.';
+            // echo ($_SESSION['client']['summa']). ' руб.';
          ?>
-         <br>-->
+         <br> -->
          <label style="margin-left: 10px">Размер скидки</label>
          <?php echo ($_SESSION['client']['discount']).' %' ?>
           <br>
@@ -39,25 +40,62 @@
        <h3>Последние покупки</h3>
 
        <div class="user_main">
-         <?php // TODO: переделать нумерацию ?>
-         <?php for ($i=0; $i < 7; $i++): ?>
+         <?php if (isset($_SESSION['last_purchase_num'])): ?>
+         <?php for ($i=1; $i <= $_SESSION['last_purchase_num']; $i++): ?>
          <div class="card">
            <div class="card-header">
-             <h6>Header</h6>
+             <h6>
+               <?php
+               echo ($_SESSION['last_purchase'.$i]['title']);
+                ?>
+             </h6>
            </div>
            <div class="card-body">
              <ul style="padding-left: 0; list-style: none;">
                <li>
-                 <label>Разннннннз</label>
+                 <label>
+                   <?php
+                   echo ($_SESSION['last_purchase'.$i]['title']);
+                    ?>
+                 </label>
                </li>
-               <li>2</li>
-               <li>3</li>
+               <li>
+                 <label>
+                   <?php
+                   echo ($_SESSION['last_purchase'.$i]['sum'].' руб.');
+                    ?>
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <?php
+                   echo (date("d.m.Y", strtotime($_SESSION['last_purchase'.$i]['date_time'])));
+                    ?>
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <?php
+                   echo (date("H:i", strtotime($_SESSION['last_purchase'.$i]['date_time'])));
+                    ?>
+                 </label>
+               </li>
+               <li>
+                 <label>
+                   <?php
+                   echo ('Место № '.$_SESSION['last_purchase'.$i]['seat']);
+                    ?>
+                 </label>
+               </li>
              </ul>
            </div>
            <button type="button" class="card-button">Вернуть</button>
          </div>
        <?php endfor; ?>
-         <p>3</p>
+     <?php else: ?>
+       <p>Покупки не совершались</p>
+       <?php endif; ?>
+
        </div>
      </div>
 
