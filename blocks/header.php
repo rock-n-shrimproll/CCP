@@ -30,27 +30,24 @@
   </div>
   <div class="header-actions">
 
-    <!-- <?php if (condition): ?>
-<?php // TODO: если получена какая-то сессия или какой-то куки, то выводим только кнопку выйти из аккаунта ?>
-    <?php endif; ?> -->
+    <?php if (isset($_COOKIE['client'])): ?>
+      <div class="exit_button">
+        <a href="vendor/exit.php">
+            <button style="auth_button">Выйти</button>
+        </a>
+      </div>
+    <?php else: ?>
+      <div class="reg_button">
+        <a href="reg_form.php">
+            <button style="reg_button">Регистрация</button>
+        </a>
+      </div>
 
-    <div class="reg_button">
-      <a href="reg_form.php">
-          <button style="reg_button">Регистрация</button>
-      </a>
-    </div>
-
-    <div class="auth_button">
-      <a href="auth_form.php">
-          <button style="auth_button">Войти</button>
-      </a>
-    </div>
-
-    <div class="exit_button">
-      <a href="vendor/exit.php">
-          <button style="auth_button">Выйти</button>
-      </a>
-    </div>
-
+      <div class="auth_button">
+        <a href="auth_form.php">
+            <button style="auth_button">Войти</button>
+        </a>
+      </div>
+    <?php endif; ?>
   </div>
 </div>

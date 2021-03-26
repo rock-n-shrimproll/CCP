@@ -11,7 +11,6 @@
   expires= 1"
   </script>';
 
-  // echo (document.cookie);
 
   header('Location: ../index.php');
  ?>

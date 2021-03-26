@@ -14,8 +14,6 @@
   <?php require "blocks/sidenav.php" ?>
 
 
-  <!--  -->
-
   <form class="reg_main" action="vendor/reg.php" method="post">
     <h1>Регистрация</h1>
 
@@ -59,7 +57,7 @@
   <script charset="utf-8">
   function reg_func() {
     alert("<?php echo($_SESSION['message']);?>");
-    <?php 
+    <?php
     unset($_SESSION['message']);
     ?>
   }

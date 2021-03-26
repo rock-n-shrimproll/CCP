@@ -55,9 +55,9 @@
 
     print_r($_SESSION['purchase']);
 
-    //header('Location: ../user.php');
+    header('Location: ../user.php');
 
-    $lifetime = 10;
+    $lifetime = 120;
     $name = 'client';
     $id =  $_SESSION['client']['id'];
     setcookie($name, $id, time() + $lifetime, '/');

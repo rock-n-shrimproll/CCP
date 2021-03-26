@@ -36,6 +36,8 @@
 
 .header-title h1{
   margin-right: 20 px;
+  font-weight: bold;
+  font-display: block;
 }
 
 .header-actions{

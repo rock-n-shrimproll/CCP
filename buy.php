@@ -39,7 +39,9 @@ $_SESSION['page'] = 'buy';
             if ($mod == 1) {
               $disabled = '';
             }
-            echo '<label class="seat-select" for="seat-' .$i. '"><input ' . $disabled . '" id="seat-' .$i. '" name="' . strval($i) . '" type="checkbox" ></input><span>' . strval($i) . '</span></label>';
+            echo '<label class="seat-select" for="seat-' .$i. '">
+            <input ' . $disabled . '" id="seat-' .$i. '" name="' . strval($i) . '" type="checkbox" ></input>
+            <span>' . strval($i) . '</span></label>';
           } ?>
           <a href="cart.php">
             <button type="button" class="signupbtn">В корзину</button>
@@ -48,7 +50,26 @@ $_SESSION['page'] = 'buy';
 
     </div>
 
+    <script>
+    function parseCookie(cookie) {
+        return Object.fromEntries(cookie.split('; ').map(c => {
+            const [key, ...v] = c.split('=');
+            return [key, v.join('=')];
+        }));
+    }
 
+    function setCookie(name, value, lifetime, path = '/') {
+        const offset = -60 * (new Date()).getTimezoneOffset();
+        document.cookie = `${name}=${value}; path=${path}; expires=${(new Date(Date.now() + lifetime + offset)).toUTCString()}`
+    }
+
+    let parsedCookie = parseCookie(document.cookie);
+
+    if (parsedCookie.client) {
+        setCookie('client', parsedCookie.client, 3 * 60 * 60);
+        setTimeout();
+    }
+  </script>
 
   </div>
 </body>

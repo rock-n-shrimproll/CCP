@@ -22,9 +22,7 @@
       "id" => $event['event_id'],
       "title" => $event['title'],
       "date_time" => $event['date_time'],
-      "type_1" => $event['type_1'],
-      "type_2" => $event['type_2'],
-      "type_3" => $event['type_3'],
+      "type" => $event['type'],
     );
   }
   // print_r($_SESSION['event'.$i]['type_'.$i]);

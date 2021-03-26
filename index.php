@@ -22,6 +22,7 @@
 
   <div class="index_main">
     <p>
+      <!-- <?php echo ($_COOKIE['client']); ?> -->
       Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum,
       altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
       Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.

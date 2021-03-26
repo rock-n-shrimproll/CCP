@@ -2,7 +2,14 @@
   session_start();
   $_SESSION['page'] = 'events';
   require_once 'get_event.php';
- ?>
+
+  // function show_label_place($i) {
+  //   for ($j=0; $j < ; $j++) {
+  //     // code...
+  //   }
+  //
+  // }
+?>
 
 
 
@@ -19,7 +26,6 @@
     <?php require 'blocks/header.php'; ?>
 
     <div class="auth_main">
-      <?php // TODO: выбор ?>
       <div class="user_main">
         <?php for ($i=1; $i <= $_SESSION['event_count']; $i++):?>
         <div class="card">
@@ -35,49 +41,33 @@
               <li>
                 <label>
                   <?php
-                  echo ($_SESSION['event'.$i]['date_time']);
+                  echo ($_SESSION['event'.$i]['type']);
                    ?>
                 </label>
               </li>
               <li>
                 <label>
                   <?php
-                  // TODO: место проведения
+                  echo (date("H:i", strtotime($_SESSION['event'.$i]['date_time'])));
                    ?>
                 </label>
               </li>
-              <!-- <?php
-              // for ($j=1; $j <= 3; $j++):
-              ?> -->
-                <!-- <li>
-                  <label>
-                    <?php
-                    // echo ($_SESSION['event'.$i]['type_'.$j]);
-                    ?>
-                  </label>
-                </li> -->
-                <!-- <?php
-                // if isset($_SESSION['event'.$i]['type_'.$j]):
-                ?>
-                <li>
-                  <label>
-                    <?php
-                    // echo ($_SESSION['event'.$i]['type_'.$i]);
-                     ?>
-                  </label>
-                </li>
-              <?php
-            // endif; ?> -->
-              <!-- <?php
-            // endfor; ?> -->
-
-            </ul>
+              <li>
+                <label>
+                  <?php
+                  echo (date("d.m.Y", strtotime($_SESSION['event'.$i]['date_time'])));
+                   ?>
+                </label>
+              </li>
+             </ul>
           </div>
-          <a href="buy.php">
-            <button type="submit" class="card-button">
-              <?php $_SESSION['choosen_event'] = $_SESSION['event'.$i]['id'] ?>
-              Выбрать место</button>
-          </a>
+          <?php if (isset($_COOKIE['client'])): ?>
+            <a href="buy.php">
+              <button type="submit" class="card-button">
+                <?php $_SESSION['choosen_event'] = $_SESSION['event'.$i]['id'] ?>
+                Выбрать место</button>
+            </a>
+          <?php endif; ?>
         </div>
       <?php endfor; ?>
 
@@ -85,6 +75,26 @@
       </div>
 
     </div>
+
+    <script>
+        function parseCookie(cookie) {
+            return Object.fromEntries(cookie.split('; ').map(c => {
+                const [key, ...v] = c.split('=');
+                return [key, v.join('=')];
+            }));
+        }
+
+        function setCookie(name, value, lifetime, path = '/') {
+            const offset = -60 * (new Date()).getTimezoneOffset();
+            document.cookie = `${name}=${value}; path=${path}; expires=${(new Date(Date.now() + lifetime + offset)).toUTCString()}`
+        }
+
+        let parsedCookie = parseCookie(document.cookie);
+
+        if (parsedCookie.client) {
+            setCookie('client', parsedCookie.client, 3 * 60 * 60);
+        }
+    </script>
 
   </body>
 </html>
