@@ -20,7 +20,7 @@
      ?>
     <div class="event_main">
       <h2>Выбранные билеты</h2>
-      <button type="submit" name="send_for_validation">Отправить на бронирование</button>
+      <button type="button" name="send_for_validation">Отправить на бронирование</button>
     </div>
       <div class="index_main">
         <div class="card">

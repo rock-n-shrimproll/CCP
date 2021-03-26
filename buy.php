@@ -32,7 +32,7 @@ $_SESSION['page'] = 'buy';
     </div>
     <div class="buy-main">
       <h3><b>Выбор места</b></h3>
-        <form action="/cart.php" style="seat" method="post">
+        <form action="cart.php" class="seat" method="post">
           <?php for ($i = 1; $i <= 25; $i++) {
             $mod = $i % 2;
             $disabled = 'disabled="true"';
@@ -43,8 +43,8 @@ $_SESSION['page'] = 'buy';
             <input ' . $disabled . '" id="seat-' .$i. '" name="' . strval($i) . '" type="checkbox" ></input>
             <span>' . strval($i) . '</span></label>';
           } ?>
-          <a href="cart.php">
-            <button type="button" class="signupbtn">В корзину</button>
+          <a href= "cart.php">
+            <button type="submit" class="signupbtn">В корзину</button>
           </a>
         </form>
 
