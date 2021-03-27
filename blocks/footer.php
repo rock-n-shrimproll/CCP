@@ -15,6 +15,6 @@
     let parsedCookie = parseCookie(document.cookie);
 
     if (parsedCookie.client) {
-        setCookie('client', parsedCookie.client, 3 * 60 * 120*1000);
+        setCookie('client', parsedCookie.client, 2 * 60 *1000);
     }
 </script>

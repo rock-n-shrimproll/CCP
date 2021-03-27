@@ -3,6 +3,7 @@
   $_SESSION['page'] = 'cart';
   $choosen_seat_num = count($_POST);
   if ($choosen_seat_num == 0){
+    //echo (count($_POST));
     $_SESSION['message'] = 'Вы ничего не выбрали!';
   }
   unset($_SESSION['choosen_seats']);
@@ -36,7 +37,7 @@
       <h2>Выбранные билеты</h2>
     </div>
       <div class="index_main">
-        <?php if ($_SESSION['message'] = 'Вы ничего не выбрали!'): ?>
+        <?php if (isset($_SESSION['message'])): ?>
           <p>
             <?php echo ($_SESSION['message']);
             unset($_SESSION['message'])

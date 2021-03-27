@@ -3,6 +3,7 @@
   $_SESSION['page'] = 'client';
   //require 'vendor/connect.php';
   unset($_SESSION['last_purchase_num']);
+  unset($_SESSION['message']);
   require 'get_last_pur.php';
  ?>
 
@@ -48,7 +49,7 @@
 
        <div class="user_main">
          <?php if (isset($_SESSION['last_purchase_num'])): ?>
-         <?php for ($i=1; $i <= $_SESSION['last_purchase_num']; $i++): ?>
+         <?php for ($i=1; $i <= 5; $i++): ?>
          <div class="card">
            <div class="card-header">
              <h6>
