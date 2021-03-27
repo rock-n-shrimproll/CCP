@@ -1,14 +1,10 @@
 <?php
   session_start();
   $_SESSION['page'] = 'events';
+  unset($_SESSION['choosen_event']);
+  unset($_SESSION['choosen_event_info']);
+  unset($_SESSION['taken_spots']);
   require_once 'get_event.php';
-
-  // function show_label_place($i) {
-  //   for ($j=0; $j < ; $j++) {
-  //     // code...
-  //   }
-  //
-  // }
 ?>
 
 
@@ -62,11 +58,15 @@
              </ul>
           </div>
           <?php if (isset($_COOKIE['client'])): ?>
-            <a href="buy.php">
-              <button type="submit" class="card-button">
-                <?php $_SESSION['choosen_event'] = $_SESSION['event'.$i]['id'] ?>
-                Выбрать место</button>
-            </a>
+            <!-- <a href="buy.php"> -->
+              <form class="buy.php" action="buy.php" method="post">
+                <!-- <?php echo strval($i)?> -->
+                <input type="submit" class="card-button" name="choosen_event" value="Выбрать <?php echo strval($i)?>">
+                  <!-- <?php $_SESSION['choosen_event'] = $_SESSION['event'.$i]['id'] ?> -->
+                  <!-- Выбрать место</button> -->
+              </form>
+
+            <!-- </a> -->
           <?php endif; ?>
         </div>
       <?php endfor; ?>
@@ -92,7 +92,7 @@
         let parsedCookie = parseCookie(document.cookie);
 
         if (parsedCookie.client) {
-            setCookie('client', parsedCookie.client, 3 * 60 * 60);
+            setCookie('client', parsedCookie.client, 3 * 60 * 120);
         }
     </script>
 

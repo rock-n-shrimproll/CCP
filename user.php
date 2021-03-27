@@ -25,11 +25,11 @@
       </h3>
 
        <div class="container">
-         <!-- <label style="margin-left: 10px">Сумма покупок</label>
+         <label style="margin-left: 10px">Сумма покупок</label>
          <?php
-            // echo ($_SESSION['client']['summa']). ' руб.';
+            echo ($_SESSION['client']['summa']). ' руб.';
          ?>
-         <br> -->
+         <br>
          <label style="margin-left: 10px">Размер скидки</label>
          <?php echo ($_SESSION['client']['discount']).' %' ?>
           <br>
@@ -115,7 +115,7 @@
          let parsedCookie = parseCookie(document.cookie);
 
          if (parsedCookie.client) {
-             setCookie('client', parsedCookie.client, 3 * 60 * 60);
+             setCookie('client', parsedCookie.client, 3 * 60 * 120);
          }
      </script>
 

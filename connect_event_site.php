@@ -25,9 +25,9 @@
             "site_id" => $event_site_j['site_id'],
           );
 
-          print_r(var_dump($connect_event_site['site_id']));
+          //print_r(var_dump($connect_event_site['site_id']));
           //
-          print_r($connect_event_site[event_id].'-'.$connect_event_site['site_id']);
+          //print_r($connect_event_site[event_id].'-'.$connect_event_site['site_id']);
 
           //array_push($_SESSION['event'.$i], $connect_event_site['site_id']);
         }

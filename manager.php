@@ -22,22 +22,28 @@
         <?php for ($i=0; $i < 7; $i++): ?>
         <div class="card">
           <div class="card-header">
-            <h6>Header</h6>
+            <h6>Название мероприятия</h6>
           </div>
           <div class="card-body">
             <ul style="padding-left: 0; list-style: none;">
               <?php // TODO: <li> in count(массив, выкромсаного из бд) далее использовать элементы этого массива  ?>
               <li>
-                <label>Разннннннз</label>
+                <label>Время мероприятия</label>
               </li>
-              <li>2</li>
-              <li>3</li>
+              <li>
+                <label>Дата мероприятия</label>
+              </li>
+              <li>
+                <label>Название театра</label>
+              </li>
+              <li>
+                <label>Сумма к возврату</label>
+              </li>
             </ul>
           </div>
           <button type="button" class="card-button">Вернуть</button>
         </div>
       <?php endfor; ?>
-        <p>3</p>
       </div>
     </div>
 

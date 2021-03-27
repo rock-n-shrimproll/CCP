@@ -16,16 +16,18 @@
   //print_r($_SESSION);
 
   unset($_SESSION['client']);
+  unset($_SESSION['manager']);
   unset($_SESSION['choosen_event']);
   unset($_SESSION['message']);
   unset($_SESSION['last_purchase_num']);
+  unset($_SESSION['free_spot_info']);
 
   if ($_SESSION['purchase']['sum'] === '0') {
     $drop_pur = "DELETE FROM `purchase` WHERE `sum` = 0";
     $drop = $connect -> query($drop_pur);
   }
   unset($_SESSION['purchase']);
-  print_r($_SESSION);
+  // print_r($_SESSION);
 
   header('Location: ../index.php');
  ?>

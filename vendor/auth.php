@@ -57,7 +57,7 @@
 
     header('Location: ../user.php');
 
-    $lifetime = 3600;
+    $lifetime = 120;
     $name = 'client';
     $id =  $_SESSION['client']['id'];
     setcookie($name, $id, time() + $lifetime, '/');

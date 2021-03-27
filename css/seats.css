@@ -12,6 +12,7 @@
 .seat-select input[type=checkbox] {
   display: none;
 }
+
 .seat-select input[type=checkbox] + span {
   padding: 20px 15px;
   background-image: url(../img/free.jpg);

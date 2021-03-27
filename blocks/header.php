@@ -30,7 +30,7 @@
   </div>
   <div class="header-actions">
 
-    <?php if (isset($_COOKIE['client'])): ?>
+    <?php if (isset($_COOKIE['client']) || isset($_SESSION['manager'])): ?>
       <div class="exit_button">
         <a href="vendor/exit.php">
             <button style="auth_button">Выйти</button>
