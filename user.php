@@ -2,6 +2,7 @@
   session_start();
   $_SESSION['page'] = 'client';
   //require 'vendor/connect.php';
+  unset($_SESSION['last_purchase_num']);
   require 'get_last_pur.php';
  ?>
 
@@ -18,7 +19,7 @@
      <?php require "blocks/header.php" ?>
 
      <div class="auth_main">
-      <h3>Здравствуйте, <?php echo($_SESSION['client']['id']); ?>
+      <h3>Здравствуйте, <?php echo($_SESSION['client']['name']); ?>
          <?php if ($_SESSION['client']['status'] === "1"): ?>
           <img src="img/tick.png" alt="tick" style="width: 3%">
         <?php endif ?>
@@ -27,7 +28,13 @@
        <div class="container">
          <label style="margin-left: 10px">Сумма покупок</label>
          <?php
-            echo ($_SESSION['client']['summa']). ' руб.';
+         if ($_SESSION['client']['summa'] == 0) {
+           echo "0 руб.";
+         }
+         else {
+           echo ($_SESSION['client']['summa']). ' руб.';
+         }
+
          ?>
          <br>
          <label style="margin-left: 10px">Размер скидки</label>
@@ -94,30 +101,12 @@
        <?php endfor; ?>
      <?php else: ?>
        <p>Покупки не совершались</p>
-       <?php endif; ?>
+     <?php endif; ?>
 
        </div>
      </div>
 
-     <script>
-         function parseCookie(cookie) {
-             return Object.fromEntries(cookie.split('; ').map(c => {
-                 const [key, ...v] = c.split('=');
-                 return [key, v.join('=')];
-             }));
-         }
-
-         function setCookie(name, value, lifetime, path = '/') {
-             const offset = -60 * (new Date()).getTimezoneOffset();
-             document.cookie = `${name}=${value}; path=${path}; expires=${(new Date(Date.now() + lifetime + offset)).toUTCString()}`
-         }
-
-         let parsedCookie = parseCookie(document.cookie);
-
-         if (parsedCookie.client) {
-             setCookie('client', parsedCookie.client, 3 * 60 * 120);
-         }
-     </script>
+     <?php require 'blocks/footer.php'; ?>
 
 
    </body>

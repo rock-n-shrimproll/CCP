@@ -27,7 +27,7 @@
       altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
       Affert laboramus repudiandae nec et. Inciderint efficiantur his ad.
       Eum no molestiae voluptatibus.</p>
-    <img src="img/images.jpeg" alt="cinema" width = 100%>
+    <img src="img/images.jpeg" alt="cinema" height= 400%>
   </div>
 
 </body>

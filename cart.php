@@ -2,6 +2,9 @@
   session_start();
   $_SESSION['page'] = 'cart';
   $choosen_seat_num = count($_POST);
+  if ($choosen_seat_num == 0){
+    $_SESSION['message'] = 'Вы ничего не выбрали!';
+  }
   unset($_SESSION['choosen_seats']);
   // echo $choosen_seat_num;
   for ($i=0; $i < $choosen_seat_num; $i++) {
@@ -33,6 +36,13 @@
       <h2>Выбранные билеты</h2>
     </div>
       <div class="index_main">
+        <?php if ($_SESSION['message'] = 'Вы ничего не выбрали!'): ?>
+          <p>
+            <?php echo ($_SESSION['message']);
+            unset($_SESSION['message'])
+             ?>
+          </p>
+        <?php else: ?>
         <?php for ($i=0; $i < $choosen_seat_num; $i++): ?>
         <div class="card">
           <div class="card-header">
@@ -64,39 +74,24 @@
           </a>
         </div>
       <?php endfor; ?>
+
       <h6>Итого к оплате:
         <?php
         $_SESSION['sum'] = 0;
         for ($i=0; $i < $choosen_seat_num; $i++){
           $_SESSION['sum'] = $_SESSION['sum'] + intval($_SESSION['choosen_ticket'.$i]['price']);
         }
+        // TODO: [sum][$i]
         echo $_SESSION['sum'].' руб';
          ?>
       </h6>
       <a href="pay.php">
       <button name="send_for_validation">Отправить на бронирование</button>
       </a>
+      <?php endif; ?>
       </div>
 
-      <script>
-    function parseCookie(cookie) {
-        return Object.fromEntries(cookie.split('; ').map(c => {
-            const [key, ...v] = c.split('=');
-            return [key, v.join('=')];
-        }));
-    }
-
-    function setCookie(name, value, lifetime, path = '/') {
-        const offset = -60 * (new Date()).getTimezoneOffset();
-        document.cookie = `${name}=${value}; path=${path}; expires=${(new Date(Date.now() + lifetime + offset)).toUTCString()}`
-    }
-
-    let parsedCookie = parseCookie(document.cookie);
-
-    if (parsedCookie.client) {
-        setCookie('client', parsedCookie.client, 3 * 60 * 120);
-    }
-  </script>
+      <?php require 'blocks/footer.php'; ?>
 
   </body>
 </html>

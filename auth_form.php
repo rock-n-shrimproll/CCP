@@ -26,12 +26,12 @@
         <?php // TODO: нормальный стиль для кнопки! ?>
         <button type="submit" style="auth_button">Войти как пользователь</button>
 
-        <!-- <p class="msg">
+        <p class="msg">
           <?php
-            // echo($_SESSION['message']);
-            // unset($_SESSION['message']);
+            echo($_SESSION['message']);
+            unset($_SESSION['message']);
           ?>
-        </p> -->
+        </p>
 
         <p>
           Ещё не аккаунта? <a href="reg_form.php">Зарегистрируйтесь</a>
@@ -50,14 +50,6 @@
 
         <button type="submit">Войти как менеджер</button>
 
-        <?php // TODO: alert вместе msg ?>
-
-        <!-- <p class="msg">
-          <?php
-            // echo($_SESSION['message']);
-            // unset($_SESSION['message']);
-          ?>
-        </p> -->
 
       </form>
     </div>
