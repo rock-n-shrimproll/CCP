@@ -34,7 +34,7 @@
         </p>
 
         <p>
-          Ещё не аккаунта? <a href="reg_form.php">Зарегистрируйтесь</a>
+          Ещё нет аккаунта? <a href="reg_form.php" style = "text-decoration: none;">Зарегистрируйтесь</a>
         </p>
       </form>
 

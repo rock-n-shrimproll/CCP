@@ -4,6 +4,7 @@
   //require 'vendor/connect.php';
   unset($_SESSION['last_purchase_num']);
   unset($_SESSION['message']);
+  require 'count_summa.php';
   require 'get_last_pur.php';
  ?>
 

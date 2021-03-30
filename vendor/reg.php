@@ -18,14 +18,14 @@ require 'connect.php';
    // $password = md5($password); //хеш пароля
    //уникальный логин
    mysqli_query($connect,
-   "INSERT INTO `client` (`client_id`, `surname`, `name`, `email`, `birthday`, `regday`, `login`,
-      `password`, `status`, `credit`, `discount`) VALUES (NULL, '$surname', '$name', '$email',
-        '$birthday', CURRENT_TIMESTAMP, '$login', '$password', '0', '0', '0')");
-  $_SESSION['message'] = 'Успешная регистрация';
+   "INSERT INTO `client` (`client_id`, `surname`, `name`, `email`, `birthday`, `login`,
+      `password`, `status`, `credit`, `discount`) VALUES (DEFAULT, '$surname', '$name', '$email',
+        '$birthday','$login', '$password', DEFAULT, '0', '0')");
+  $_SESSION['message'] = $mysqli->error;
   header('Location: ../auth_form.php');
  }
  else {
-   $_SESSION['message'] = 'Пароли не совпадают';
+   $_SESSION['message'] = 'Введенные пароли не совпадают';
    header('Location: ../reg_form.php');
  }
 ?>

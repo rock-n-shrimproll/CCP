@@ -5,6 +5,7 @@
 
 <div class="header">
   <div class="header-title">
+    <?php // TODO: Заменить на switch case, а то стыдоба какая-то ?>
     <?php if ($_SESSION['page'] === 'index'): ?>
       <h1>Главная</h1>
     <?php endif; ?>

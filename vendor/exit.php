@@ -11,9 +11,13 @@
   echo '<script>
   const offset = -60 * (new Date()).getTimezoneOffset();
   document.cookie = "client='.$id.'; path=/;
-  expires= 1"
+  expires= -1"
   </script>';
   //print_r($_SESSION);
+  //
+  // for ($i=1; $i <= $_SESSION['last_purchase_num']; $i++) {
+  //   unset($_SESSION['last_purchase'.$i]);
+  // }
 
   unset($_SESSION['client']);
   unset($_SESSION['manager']);
@@ -26,6 +30,7 @@
     $drop_pur = "DELETE FROM `purchase` WHERE `sum` = 0";
     $drop = $connect -> query($drop_pur);
   }
+
   unset($_SESSION['purchase']);
   // print_r($_SESSION);
 

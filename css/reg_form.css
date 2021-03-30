@@ -14,7 +14,7 @@ body {
   height: 100%;
 }
 
-input[type=text], input[type=password] {
+input[type="text"], input[type="date"], input[type="email"], input[type="password"]{
   width: 100%;
   padding: 10px;
   margin: 10px 0 22px 0;
@@ -23,7 +23,7 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type="text"]:focus, input[type="date"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -56,11 +56,6 @@ hr {
   margin-bottom: 15px;
 }
 
-/* .clearfix {
-  content: "";
-  clear: both;
-  display: inline-block;
-} */
 
 .msg p {
   border: 2 px solid;

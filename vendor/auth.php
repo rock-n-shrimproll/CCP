@@ -28,15 +28,16 @@
     );
 
 
-    print_r($_SESSION['client']);
-    $_SESSION['message'] = 'Успешная регистрация';
+    //print_r($_SESSION['client']);
+
 
     $current_client = $_SESSION['client']['id'];
 
-    echo "$current_client";
+    //echo "$current_client";
 
     $create_client_purchase = $connect -> query("INSERT INTO `purchase`(`purchase_id`, `date_time`, `sum`, `payment`, `status`, `client_id`, `manager_id`)
     VALUES (DEFAULT,DEFAULT,0,DEFAULT,DEFAULT,'$current_client',DEFAULT)");
+    $_SESSION['message'] = $mysqli->error;
 
     $read_new_purchase = mysqli_query($connect, "SELECT * FROM `purchase` ORDER BY `purchase_id` DESC LIMIT 1");
 
@@ -53,9 +54,9 @@
       "client_id" => $purchase['client_id'],
     );
 
-    print_r($_SESSION['purchase']);
+    //print_r($_SESSION['purchase']);
 
-    header('Location: ../user.php');
+
 
     $lifetime = 120;
     $name = 'client';
@@ -66,6 +67,8 @@
     document.cookie = "client='.$id.'; path=/; expires=" + (new Date(Date.now() + '. strval($lifetime) .' + offset)).toUTCString()
     </script>';
 
-    echo ($_COOKIE['client']);
+    //$_SESSION['message'] = 'Успешная регистрация';
+    header('Location: ../user.php');
+    //echo ($_COOKIE['client']);
   }
 ?>

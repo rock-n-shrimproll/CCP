@@ -18,50 +18,56 @@
     <h1>Регистрация</h1>
 
     <label for="surname"><b>Фамилия</b></label>
-    <input type="text" placeholder="Enter Surname" name="surname" required> <br>
+    <input type="text" placeholder="Введите фамилию" name="surname" required> <br>
 
     <label for="name"><b>Имя</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required> <br>
+    <input type="text" placeholder="Введите имя" name="name" required> <br>
 
     <label for="email"><b>Почта</b></label>
-    <input type="email" placeholder="Enter email" name="email" required> <br>
+    <input type="email" placeholder="Введите почту" name="email" required> <br>
 
     <label for="birthday"><b>День рождения</b></label>
-    <input type="date" placeholder="yyyy.mm.dd" name="birthday"
-    pattern="[1900-2002]{4}.[01-12]{2}.[01-31]{2}" required>
+    <input type="date" placeholder="гггг.мм.дд" name="birthday"
+    pattern="\d{4}.\d{1,2}.\d{1,2}" required>
 
     <hr>
 
     <label for="login"><b>Логин</b></label>
-    <input type="text" placeholder="Enter Login" name="login" required>
+    <input type="text" placeholder="Введите логин" name="login" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Введите пароль" name="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw_confirm" required>
+    <input type="password" placeholder="Подтвердите пароль" name="psw_confirm" required>
 
-    <button type="submit" class="signupbtn" onclick="reg_func">Зарегистрироваться</button>
+    <button type="submit" class="signupbtn">Зарегистрироваться</button>
 
     <!-- <div class="clearfix">
       <button type="submit" class="signupbtn">Зарегистрироваться</button>
     </div> -->
 
-    <!-- <p class="msg">Lorem ipsum</p> -->
+    <p class="msg">
+      <?php
+        echo($_SESSION['message']);
+        unset($_SESSION['message']);
+      ?>
+    </p>
     <br>
     <div class="container">
       Уже есть регистрация? <a href="auth_form.php">Войти</a>
     </div>
   </form>
 
-  <script charset="utf-8">
+  <!-- <script charset="utf-8">
   function reg_func() {
-    alert("<?php echo($_SESSION['message']);?>");
+    alert("<?php
+    // echo($_SESSION['message']);?>");
     <?php
-    unset($_SESSION['message']);
+    // unset($_SESSION['message']);
     ?>
   }
   // TODO: alert("Такой логин уже занят!")
-  </script>
+  </script> -->
 </body>
 </html>

@@ -2,8 +2,8 @@
 session_start();
 $_SESSION['page'] = 'buy';
 $_SESSION['choosen_event'] = stristr($_POST['choosen_event'], ' ');
-require_once 'get_choosen_event.php';
-require 'get_spots.php';
+require_once 'get_choosen_event.php'; //подтягиваем информацию о выбранном событии
+require 'get_spots.php'; //подтягиваем информацию о заполненности зала
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +70,8 @@ require 'get_spots.php';
             <button type="submit" class="signupbtn">В корзину</button>
           </a>
         </form>
+        
+
 
     </div>
 

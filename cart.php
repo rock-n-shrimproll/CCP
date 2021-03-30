@@ -70,9 +70,9 @@
               <!-- <li>3</li> -->
             </ul>
           </div>
-          <a href="#">
+          <!-- <a href="#">
             <button type="button" class="card-button">Убрать</button>
-          </a>
+          </a> -->
         </div>
       <?php endfor; ?>
 
@@ -87,7 +87,7 @@
          ?>
       </h6>
       <a href="pay.php">
-      <button name="send_for_validation">Отправить на бронирование</button>
+        <button name="send_for_validation" style = "">Отправить на бронирование</button>
       </a>
       <?php endif; ?>
       </div>
